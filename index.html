@@ -10,6 +10,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Daily type beats for hip hop and trap artists. Plus the best music production tools, MIDI packs, and free distribution platforms used by successful producers. Pookie Beats on YouTube." />
     
+    <!-- Preload Critical Hero Image -->
+    <link rel="preload" as="image" href="images/pic00.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/pic00.jpg" type="image/jpeg">
+    
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pookiebeats.com/" />
@@ -419,10 +423,16 @@
         <!-- Hero Section -->
         <section id="intro" class="wrapper style1 fullscreen fade-up">
             <div class="inner">
-                <img src="images/pic00.jpg" 
-                     alt="Pookie Beats Profile" 
-                     style="width:150px; height:150px; border-radius:50%; margin-bottom: 1em; object-fit: cover;" 
-                     loading="eager" />
+                <!-- Optimized Hero Image with WebP -->
+                <picture>
+                    <source srcset="images/pic00.webp" type="image/webp">
+                    <img src="images/pic00.jpg" 
+                         alt="Pookie Beats Profile" 
+                         style="width:150px; height:150px; border-radius:50%; margin-bottom: 1em; object-fit: cover;" 
+                         width="150"
+                         height="150"
+                         fetchpriority="high" />
+                </picture>
                 
                 <!-- FTC Disclosure - Prominent Placement -->
                 <div class="disclosure-box">
@@ -460,7 +470,14 @@
             <!-- Unison Audio -->
 			<section>
 			    <a href="https://unison.audio/ref/pookiebeats/" target="_blank" rel="noopener nofollow" class="image" aria-label="Visit Unison Audio website">
-			        <img src="images/pic01.jpg" alt="Unison Audio - MIDI packs and production tools" data-position="center center" loading="lazy" />
+			        <!-- Optimized Image with WebP -->
+			        <picture>
+			            <source srcset="images/pic01.webp" type="image/webp">
+			            <img src="images/pic01.jpg" 
+			                 alt="Unison Audio - MIDI packs and production tools" 
+			                 data-position="center center" 
+			                 loading="lazy" />
+			        </picture>
 			    </a>
                 <div class="content">
                     <div class="inner">
@@ -490,7 +507,14 @@
             <!-- RouteNote -->
 			<section>
 			    <a href="https://www.routenote.com/rn/referral/2fb91e57" target="_blank" rel="noopener nofollow" class="image" aria-label="Visit RouteNote website">
-			        <img src="images/pic02.jpg" alt="RouteNote - Free music distribution" data-position="top center" loading="lazy" />
+			        <!-- Optimized Image with WebP -->
+			        <picture>
+			            <source srcset="images/pic02.webp" type="image/webp">
+			            <img src="images/pic02.jpg" 
+			                 alt="RouteNote - Free music distribution" 
+			                 data-position="top center" 
+			                 loading="lazy" />
+			        </picture>
 			    </a>
                 <div class="content">
                     <div class="inner">
