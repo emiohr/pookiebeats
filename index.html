@@ -57,7 +57,7 @@
             z-index: 1000;
             padding: 18px 40px;
             background: #FF6B35;
-            color: #ffffff;
+            color: #000000 !important;
             font-size: 18px;
             font-weight: bold;
             border-radius: 8px;
@@ -73,6 +73,7 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(255, 107, 53, 0.6);
             background: #ff7d4d;
+            color: #000000 !important;
         }
         
         .sticky-cta:active {
@@ -118,7 +119,7 @@
         /* Enhanced CTA Buttons */
         .button {
             background: #FF6B35;
-            color: #ffffff !important;
+            color: #000000 !important;
             border: none;
             font-weight: bold;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -129,6 +130,7 @@
             background: #ff7d4d;
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5);
+            color: #000000 !important;
         }
         
         .button:active {
@@ -137,10 +139,28 @@
         
         .button.small {
             background: #5e42a6;
+            color: #ffffff !important;
         }
         
         .button.small:hover {
             background: #7052c4;
+            color: #ffffff !important;
+        }
+        
+        /* Center actions */
+        .actions {
+            justify-content: center;
+        }
+        
+        /* YouTube button specific styling */
+        .button.youtube-btn {
+            background: #FF0000;
+            color: #000000 !important;
+        }
+        
+        .button.youtube-btn:hover {
+            background: #cc0000;
+            color: #000000 !important;
         }
         
         /* Disclosure Box */
@@ -270,7 +290,7 @@
                 
                 <ul class="actions">
                     <li><a href="#top-picks" class="button scrolly">Get the Tools Now</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCOHFxROuCmBQvQ_bu0MTs4w/" target="_blank" rel="noopener" class="button" style="background: #FF0000;">Watch Free Tutorials</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCOHFxROuCmBQvQ_bu0MTs4w/" target="_blank" rel="noopener" class="button youtube-btn">Watch Free Tutorials</a></li>
                 </ul>
             </div>
         </section>
@@ -432,7 +452,7 @@
                     <h3>Don't Miss Out on Free Beats & Production Tips</h3>
                     <p>New beats uploaded daily. Production tutorials every week.</p>
                     <ul class="actions" style="justify-content: center;">
-                        <li><a href="https://www.youtube.com/channel/UCOHFxROuCmBQvQ_bu0MTs4w/" target="_blank" rel="noopener" class="button" style="background: #FF0000;">Subscribe on YouTube</a></li>
+                        <li><a href="https://www.youtube.com/channel/UCOHFxROuCmBQvQ_bu0MTs4w/" target="_blank" rel="noopener" class="button youtube-btn">Subscribe on YouTube</a></li>
                         <li><a href="https://unison.audio/ref/pookiebeats/" target="_blank" rel="noopener nofollow" class="button">Get Free MIDI Pack</a></li>
                     </ul>
                 </div>
