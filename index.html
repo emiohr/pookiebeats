@@ -118,21 +118,36 @@
         #sidebar nav ul li{margin:1em 0!important}
         #sidebar nav ul li a{font-size:0.55em!important;padding:1em 0!important}
         
-        /* Wrapper - Match Sidebar Width */
+        /* Wrapper - Match Sidebar Width & Center Content */
         #sidebar + #wrapper{margin-left:12em!important}
+        .wrapper > .inner{margin:0 auto!important;padding-left:3em!important;padding-right:3em!important}
+        
+        /* Center Headings */
+        .wrapper h2{text-align:center!important}
+        .wrapper > .inner > p{text-align:center!important}
         
         /* Footer - Match Sidebar Width */
         #sidebar + #wrapper + #footer{margin-left:12em!important}
+        #footer .inner{margin:0 auto!important}
+        
+        /* Spotlights - Center Content */
+        .spotlights .content{display:flex!important;align-items:center!important;justify-content:center!important}
+        .spotlights .inner{margin:0 auto!important}
+        
+        /* Features Grid - Center */
+        .features{margin-left:auto!important;margin-right:auto!important}
         
         /* Mobile - Reset */
         @media screen and (max-width:1280px){
             #sidebar{width:100%!important;height:3.5em!important}
             #sidebar + #wrapper{margin-left:0!important;padding-top:3.5em!important}
             #sidebar + #wrapper + #footer{margin-left:0!important}
+            .wrapper > .inner{padding-left:2em!important;padding-right:2em!important}
         }
         @media screen and (max-width:736px){
             #sidebar{display:none!important}
             #sidebar + #wrapper{padding-top:0!important}
+            .wrapper > .inner{padding-left:1.5em!important;padding-right:1.5em!important}
         }
         
         /* Trust Badges */
