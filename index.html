@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!-- Security Headers -->
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -12,23 +11,19 @@
     <title>Pookie Beats - Free Type Beats & Music Production Tools for Hip Hop Artists</title>
     <meta name="description" content="Daily type beats for hip hop and trap artists. Plus the best music production tools, MIDI packs, and free distribution platforms used by successful producers. Pookie Beats on YouTube.">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Preconnect to External Domains (Performance) -->
     <link rel="preconnect" href="https://www.youtube-nocookie.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://form.jotform.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
-    <!-- Preload Critical Hero Image -->
     <link rel="preload" as="image" href="images/pic00.webp" type="image/webp" fetchpriority="high">
     
-    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://pookiebeats.com/">
     <meta property="og:title" content="Pookie Beats - Free Type Beats & Music Production Tools for Hip Hop Artists">
@@ -38,22 +33,18 @@
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Pookie Beats">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://pookiebeats.com/">
     <meta name="twitter:title" content="Pookie Beats - Type Beats & Producer Tools">
     <meta name="twitter:description" content="Daily type beats and the best tools for hip hop producers and artists.">
     <meta name="twitter:image" content="https://pookiebeats.com/images/pic00.jpg">
 
-    <!-- Async Load Main CSS (FIX RENDER-BLOCKING) -->
     <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
     
-    <!-- Async Load Noscript CSS -->
     <link rel="preload" href="assets/css/noscript.css" as="style" onload="this.onload=null;this.rel='stylesheet'" media="print">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
     
-    <!-- Schema Markup - Website -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -69,7 +60,6 @@
     }
     </script>
     
-    <!-- Critical CSS - Inlined to Prevent FOUC -->
     <style>
         /* Critical Reset */
         *,*::before,*::after{box-sizing:border-box}
@@ -105,6 +95,11 @@
         #wrapper{width:100%;position:relative;margin-left:0;transition:margin-left 0.4s cubic-bezier(0.4,0,0.2,1)}
         .wrapper{padding:4rem 2rem}
         .inner{max-width:1200px;margin:0 auto;width:100%}
+
+        /* FIX: Override external style pushing content */
+        #sidebar + #wrapper {
+            margin-left: 0;
+        }
         
         /* Sticky CTA Button */
         .sticky-cta{position:fixed;top:20px;right:20px;z-index:1000;padding:18px 40px;background:#FF6B35;color:#000!important;font-size:18px;font-weight:bold;border-radius:8px;box-shadow:0 4px 12px rgba(255,107,53,0.4);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);text-decoration:none;min-width:200px;text-align:center;border:none}
@@ -210,27 +205,22 @@
 </head>
 
 <body class="is-preload">
-    <!-- Skip to Main Content (Accessibility) -->
     <a href="#intro" class="skip-link">Skip to main content</a>
 
-    <!-- Hamburger Menu Button -->
     <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <!-- Sidebar Overlay -->
     <div id="sidebar-overlay" aria-hidden="true"></div>
 
-    <!-- Sticky CTA Button -->
     <a href="https://form.jotform.com/252777121852359" 
        target="_blank" 
        rel="noopener nofollow" 
        class="sticky-cta"
        aria-label="Get 5 free beats">Get 5 Free Beats</a>
 
-    <!-- Sidebar -->
     <section id="sidebar" role="complementary" aria-label="Quick navigation">
         <div class="inner">
             <nav>
@@ -243,13 +233,10 @@
         </div>
     </section>
 
-    <!-- Wrapper -->
     <div id="wrapper">
 
-        <!-- Hero Section -->
         <section id="intro" class="wrapper style1 fullscreen fade-up">
             <div class="inner">
-                <!-- Optimized Hero Image with WebP -->
                 <picture>
                     <source srcset="images/pic00.webp" type="image/webp">
                     <img src="images/pic00.jpg" 
@@ -261,7 +248,6 @@
                          loading="eager">
                 </picture>
                 
-                <!-- FTC Disclosure - Prominent Placement -->
                 <div class="disclosure-box" role="note" aria-label="Affiliate disclosure">
                     <strong>⚡ Affiliate Disclosure:</strong> Some links on this page are affiliate links. I earn a small commission when you purchase through them at no extra cost to you. This supports my daily free beat uploads on YouTube. I only recommend tools I actually use and trust.
                 </div>
@@ -269,7 +255,6 @@
                 <h1>Make Radio-Ready Beats in 30 Minutes</h1>
                 <p style="font-size: 1.15em; margin-bottom: 1.5em; text-align: center;">Daily type beats for hip hop artists + the exact production tools that helped me create <strong>beats with over 2M+ views</strong> on YouTube.</p>
                 
-                <!-- Trust Badges -->
                 <div class="trust-badge-container">
                     <div class="trust-badge">
                         <span aria-hidden="true">📺</span>
@@ -292,16 +277,13 @@
             </div>
         </section>
 
-        <!-- Top 2 Programs (Spotlight Style) -->
         <section id="top-picks" class="wrapper style2 spotlights">
-            <!-- Unison Audio -->
             <section>
                 <a href="https://unison.audio/ref/pookiebeats/" 
                    target="_blank" 
                    rel="sponsored noopener nofollow" 
                    class="image" 
                    aria-label="Visit Unison Audio website">
-                    <!-- Optimized Image with WebP -->
                     <picture>
                         <source srcset="images/pic01.webp" type="image/webp">
                         <img src="images/pic01.jpg" 
@@ -317,13 +299,11 @@
                         <h2>🏆 #1 Pick: Unison Audio</h2>
                         <p><strong>Why I recommend it:</strong> If you're tired of staring at a blank DAW for hours, Unison has the best MIDI packs, drum kits, and Serum presets I've ever used. These tools cut my beat-making time from 2 hours to 15 minutes.</p>
                         
-                        <!-- Trust Signal -->
                         <div class="trust-badge" style="display: inline-flex; margin: 1em 0;">
                             <span aria-hidden="true">⭐⭐⭐⭐⭐</span>
                             <span style="margin-left: 10px;"><strong>4.8/5</strong> from 1,200+ producers</span>
                         </div>
                         
-                        <!-- Lite YouTube Embed (PERFORMANCE FIX) -->
                         <lite-youtube videoid="t4xxec0hFdc" params="start=14&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/t4xxec0hFdc/hqdefault.jpg');">
                             <a href="https://youtube.com/watch?v=t4xxec0hFdc" class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Unison Audio demonstration</span>
@@ -339,14 +319,12 @@
                 </div>
             </section>
 
-            <!-- RouteNote -->
             <section>
                 <a href="https://www.routenote.com/rn/referral/2fb91e57" 
                    target="_blank" 
                    rel="sponsored noopener nofollow" 
                    class="image" 
                    aria-label="Visit RouteNote website">
-                    <!-- Optimized Image with WebP -->
                     <picture>
                         <source srcset="images/pic02.webp" type="image/webp">
                         <img src="images/pic02.jpg" 
@@ -362,7 +340,6 @@
                         <h2>🚀 #2 Pick: RouteNote</h2>
                         <p><strong>Why I use it:</strong> This is how I get my beats on Spotify, Apple Music, and every major platform—completely free. Zero upfront costs. You keep 85% of royalties on the free plan, or 100% if you go premium.</p>
                         
-                        <!-- Trust Signal -->
                         <div class="trust-badge" style="display: inline-flex; margin: 1em 0;">
                             <span aria-hidden="true">✅</span>
                             <span style="margin-left: 10px;"><strong>Used by 500,000+</strong> artists worldwide</span>
@@ -378,20 +355,17 @@
             </section>
         </section>
 
-        <!-- More Tools (Grid Style) -->
         <section id="more-tools" class="wrapper style3 fade-up">
             <div class="inner">
                 <h2>Other Essential Producer Tools</h2>
                 <p>These are highly rated tools used by the producer community. I've tested each one personally.</p>
                 <div class="features">
                     
-                    <!-- Waves -->
                     <section>
                         <span class="icon solid major fa-wave-square" aria-hidden="true"></span>
                         <h3>Waves Plugins</h3>
                         <p>Industry standard for mixing and mastering. SSL E-Channel and Renaissance Compressor are on thousands of platinum records. They run huge sales constantly—never pay full price.</p>
                         
-                        <!-- Lite YouTube Embed -->
                         <lite-youtube videoid="pRW8KGjVOsk" params="rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/pRW8KGjVOsk/hqdefault.jpg');">
                             <a href="https://youtube.com/watch?v=pRW8KGjVOsk" class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Waves plugins demonstration</span>
@@ -403,13 +377,11 @@
                         </ul>
                     </section>
 
-                    <!-- Publer -->
                     <section>
                         <span class="icon solid major fa-share-alt" aria-hidden="true"></span>
                         <h3>Publer</h3>
                         <p>This is how I automate posting beats everywhere. I connect Publer's API with n8n to schedule posts across all platforms. Saves me 10+ hours every week so I can focus on making beats.</p>
                         
-                        <!-- Lite YouTube Embed -->
                         <lite-youtube videoid="u8iySEvN-30" params="start=88&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/u8iySEvN-30/hqdefault.jpg');">
                             <a href="https://youtube.com/watch?v=u8iySEvN-30" class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Publer automation demonstration</span>
@@ -421,13 +393,11 @@
                         </ul>
                     </section>
 
-                    <!-- Singorama -->
                     <section>
                         <span class="icon solid major fa-microphone-alt" aria-hidden="true"></span>
                         <h3>Singorama</h3>
                         <p>Vocal training software for producers working with artists or recording their own vocals. Teaches proper recording technique and vocal performance fundamentals.</p>
                         
-                        <!-- Lite YouTube Embed -->
                         <lite-youtube videoid="slkEaNPbGpE" params="start=67&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/slkEaNPbGpE/hqdefault.jpg');">
                             <a href="https://youtube.com/watch?v=slkEaNPbGpE" class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Singorama vocal training demonstration</span>
@@ -441,7 +411,6 @@
 
                 </div>
                 
-                <!-- Mid-page CTA Repeat -->
                 <div style="text-align: center; margin: 3em 0;">
                     <h3>Ready to Level Up Your Production?</h3>
                     <p>Join 50,000+ producers getting better every day.</p>
@@ -452,7 +421,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="wrapper style1 fade-up">
             <div class="inner">
                 <h2>Get in Touch</h2>
@@ -478,7 +446,6 @@
                     </section>
                 </div>
                 
-                <!-- Final CTA -->
                 <div style="text-align: center; margin: 3em 0;">
                     <h3>Don't Miss Out on Free Beats & Production Tips</h3>
                     <p>New beats uploaded daily. Production tutorials every week.</p>
@@ -492,7 +459,6 @@
 
     </div>
 
-    <!-- Footer -->
     <footer id="footer" class="wrapper style1-alt">
         <div class="inner" style="text-align: center;">
             <ul class="menu" style="text-align: center;">
@@ -505,7 +471,6 @@
         </div>
     </footer>
 
-    <!-- Exit Intent Popup HTML -->
     <div id="exit-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
         <div id="exit-popup">
             <button id="exit-popup-close" aria-label="Close popup">&times;</button>
@@ -527,10 +492,8 @@
         </div>
     </div>
 
-    <!-- Lite YouTube Script (2.6KB - Replaces Heavy iframes) -->
     <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
 
-    <!-- Deferred Scripts with Passive Listeners Fix -->
     <script defer src="assets/js/jquery.min.js"></script>
     <script defer src="assets/js/jquery.scrollex.min.js"></script>
     <script defer src="assets/js/jquery.scrolly.min.js"></script>
@@ -539,7 +502,6 @@
     <script defer src="assets/js/util.js"></script>
     <script defer src="assets/js/main.js"></script>
 
-    <!-- Sidebar Toggle JavaScript -->
     <script>
     (function(){
         const menuToggle = document.getElementById('menu-toggle');
@@ -583,7 +545,6 @@
     })();
     </script>
 
-    <!-- Exit Intent JavaScript (Optimized with Passive Listeners) -->
     <script>
     (function(){
         if(sessionStorage.getItem('exitPopupShown'))return;
