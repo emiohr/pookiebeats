@@ -73,19 +73,19 @@
         #menu-toggle{position:fixed;top:20px;left:20px;z-index:10002;width:50px;height:50px;background:#FF6B35;border:none;border-radius:8px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:0;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);box-shadow:0 4px 12px rgba(255,107,53,0.4)}
         #menu-toggle:hover{background:#ff7d4d;transform:scale(1.05);box-shadow:0 6px 16px rgba(255,107,53,0.6)}
         #menu-toggle:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
-        #menu-toggle span{display:block;width:28px;height:3px;background:#000;border-radius:3px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
-        #menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}
-        #menu-toggle.active span:nth-child(2){opacity:0;transform:translateX(-20px)}
-        #menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px)}
+        #menu-toggle span{display:block;width:28px;height:3px;background:#000;border-radius:3px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1); transform-origin: center;}
+        #menu-toggle.active span:nth-child(1){transform: translateY(9px) rotate(45deg)}
+        #menu-toggle.active span:nth-child(2){opacity:0}
+        #menu-toggle.active span:nth-child(3){transform: translateY(-9px) rotate(-45deg)}
         
         /* Sidebar - Collapsible */
-        #sidebar{position:fixed;left:-12em;top:0;bottom:0;width:12em;background:#5e42a6;z-index:10001;transition:left 0.4s cubic-bezier(0.4,0,0.2,1);padding:2em 1em 0.5em 1em;overflow-y:auto;box-shadow:4px 0 12px rgba(0,0,0,0.3)}
+        #sidebar{position:fixed;left:-15em;top:0;bottom:0;width:15em;background:#5e42a6;z-index:10001;transition:left 0.4s cubic-bezier(0.4,0,0.2,1);padding:2em 1.5em 0.5em 1.5em;overflow-y:auto;box-shadow:4px 0 12px rgba(0,0,0,0.3)}
         #sidebar.active{left:0}
         #sidebar .inner{padding:0}
         #sidebar nav ul{list-style:none;padding:0;margin:2em 0 0 0}
         #sidebar nav ul li{margin:1em 0}
-        #sidebar nav ul li a{display:block;color:#fff;text-decoration:none;font-size:0.55em;padding:1em 0;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;border-bottom:1px solid rgba(255,255,255,0.1)}
-        #sidebar nav ul li a:hover,#sidebar nav ul li a:focus{color:#FF6B35;padding-left:0.5em;border-bottom-color:#FF6B35}
+        #sidebar nav ul li a{display:block;color:#fff;text-decoration:none;font-size:0.6em;padding:1em 0;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;border-bottom:1px solid rgba(255,255,255,0.1); text-align: center;}
+        #sidebar nav ul li a:hover,#sidebar nav ul li a:focus{color:#FF6B35;border-bottom-color:#FF6B35}
         
         /* Overlay for Sidebar */
         #sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.4,0,0.2,1)}
@@ -100,9 +100,12 @@
         #sidebar + #wrapper {
             margin-left: 0;
         }
+        #sidebar + #wrapper + #footer {
+            margin-left: 0;
+        }
         
         /* Sticky CTA Button */
-        .sticky-cta{position:fixed;top:20px;right:20px;z-index:1000;padding:18px 40px;background:#FF6B35;color:#000!important;font-size:18px;font-weight:bold;border-radius:8px;box-shadow:0 4px 12px rgba(255,107,53,0.4);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);text-decoration:none;min-width:200px;text-align:center;border:none}
+        .sticky-cta{position:fixed;top:20px;right:20px;z-index:1000;padding:18px 40px;background:#FF6B35;color:#000!important;font-size:18px;font-weight:bold;border-radius:8px;box-shadow:0 4px 12px rgba(255,107,53,0.4);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);text-decoration:none;min-width:200px;text-align:center;border:none; display: inline-flex; justify-content: center; align-items: center;}
         .sticky-cta:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.6);background:#ff7d4d}
         .sticky-cta:active{transform:translateY(0)}
         
@@ -114,7 +117,7 @@
         h1{font-size:clamp(1.5rem,5vw,3rem);margin:0.5em 0;line-height:1.2;text-align:center}
         
         /* Buttons - Critical */
-        .button{display:inline-block;background:#FF6B35;color:#000!important;border:none;font-weight:bold;padding:12px 30px;border-radius:4px;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 12px rgba(255,107,53,0.3);cursor:pointer}
+        .button{display:inline-flex; justify-content: center; align-items: center; text-align: center; background:#FF6B35;color:#000!important;border:none;font-weight:bold;padding:12px 30px;border-radius:4px;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 12px rgba(255,107,53,0.3);cursor:pointer}
         .button:hover{background:#ff7d4d;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.5)}
         .button.youtube-btn{background:#FF0000}
         .button.youtube-btn:hover{background:#cc0000}
@@ -126,6 +129,8 @@
         @media(max-width:768px){
             #menu-toggle{top:15px;left:15px;width:45px;height:45px}
             #menu-toggle span{width:24px;height:2.5px}
+            #menu-toggle.active span:nth-child(1){transform: translateY(8.5px) rotate(45deg)}
+            #menu-toggle.active span:nth-child(3){transform: translateY(-8.5px) rotate(-45deg)}
             .sticky-cta{bottom:20px;top:auto;left:50%;transform:translateX(-50%);right:auto;padding:16px 32px;font-size:16px;min-width:280px}
             .sticky-cta:hover{transform:translateX(-50%) translateY(-2px)}
         }
@@ -305,7 +310,7 @@
                         </div>
                         
                         <lite-youtube videoid="t4xxec0hFdc" params="start=14&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/t4xxec0hFdc/hqdefault.jpg');">
-                            <a href="https://youtube.com/watch?v=t4xxec0hFdc" class="lyt-playbtn" title="Play Video">
+                            <a class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Unison Audio demonstration</span>
                             </a>
                         </lite-youtube>
@@ -367,7 +372,7 @@
                         <p>Industry standard for mixing and mastering. SSL E-Channel and Renaissance Compressor are on thousands of platinum records. They run huge sales constantly—never pay full price.</p>
                         
                         <lite-youtube videoid="pRW8KGjVOsk" params="rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/pRW8KGjVOsk/hqdefault.jpg');">
-                            <a href="https://youtube.com/watch?v=pRW8KGjVOsk" class="lyt-playbtn" title="Play Video">
+                            <a class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Waves plugins demonstration</span>
                             </a>
                         </lite-youtube>
@@ -383,7 +388,7 @@
                         <p>This is how I automate posting beats everywhere. I connect Publer's API with n8n to schedule posts across all platforms. Saves me 10+ hours every week so I can focus on making beats.</p>
                         
                         <lite-youtube videoid="u8iySEvN-30" params="start=88&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/u8iySEvN-30/hqdefault.jpg');">
-                            <a href="https://youtube.com/watch?v=u8iySEvN-30" class="lyt-playbtn" title="Play Video">
+                            <a class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Publer automation demonstration</span>
                             </a>
                         </lite-youtube>
@@ -399,7 +404,7 @@
                         <p>Vocal training software for producers working with artists or recording their own vocals. Teaches proper recording technique and vocal performance fundamentals.</p>
                         
                         <lite-youtube videoid="slkEaNPbGpE" params="start=67&rel=0&modestbranding=1" style="background-image: url('https://i.ytimg.com/vi/slkEaNPbGpE/hqdefault.jpg');">
-                            <a href="https://youtube.com/watch?v=slkEaNPbGpE" class="lyt-playbtn" title="Play Video">
+                            <a class="lyt-playbtn" title="Play Video">
                                 <span class="lyt-visually-hidden">Play Video: Singorama vocal training demonstration</span>
                             </a>
                         </lite-youtube>
@@ -461,10 +466,10 @@
 
     <footer id="footer" class="wrapper style1-alt">
         <div class="inner" style="text-align: center;">
-            <ul class="menu" style="text-align: center;">
+            <ul class="menu" style="display: flex; flex-direction: column; align-items: center; padding: 0; text-align: center;">
                 <li>&copy; Pookie Beats. All rights reserved.</li>
                 <li>Design: <a href="http://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
-                <li style="font-size: 0.75em; opacity: 0.7; margin-top: 0.5em; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <li style="font-size: 0.75em; opacity: 0.7; margin-top: 0.5em; max-width: 600px; margin-left: auto; margin-right: auto; border-left: 0; padding-left: 0; margin-top: 1.5em; line-height: 1.5;">
                     <strong>FTC Disclosure:</strong> This website contains affiliate links, meaning I earn a commission if you purchase through them at no additional cost to you. This helps support my daily beat uploads and free content. I only recommend tools that are genuinely useful for producers and artists.
                 </li>
             </ul>
