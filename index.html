@@ -81,6 +81,7 @@
         
         /* Critical Layout */
         #wrapper{width:100%;position:relative}
+        @media(min-width:1025px){#wrapper{margin-left:180px}}
         .wrapper{padding:4rem 2rem}
         .inner{max-width:1200px;margin:0 auto;width:100%}
         
@@ -111,10 +112,14 @@
             .sticky-cta:hover{transform:translateX(-50%) translateY(-2px)}
         }
         
-        /* Sidebar */
-        #sidebar{opacity:0.9;background:rgba(49,36,80,0.95)}
-        #sidebar nav ul li a{font-size:0.9em}
-        @media(max-width:1024px){#sidebar{display:none}}
+        /* Sidebar - Smaller */
+        #sidebar{position:fixed;left:0;top:0;width:180px;height:100%;opacity:0.9;background:rgba(49,36,80,0.95);padding:2rem 1rem;z-index:999}
+        #sidebar nav ul{list-style:none;padding:0;margin:0}
+        #sidebar nav ul li{margin:0.8em 0}
+        #sidebar nav ul li a{font-size:0.85em;color:#fff;text-decoration:none}
+        #sidebar nav ul li a:hover{color:#FF6B35}
+        @media(min-width:1025px){#wrapper{margin-left:180px}}
+        @media(max-width:1024px){#sidebar{display:none}#wrapper{margin-left:0}}
         
         /* Trust Badges */
         .trust-badge-container{display:flex;align-items:center;justify-content:center;gap:20px;margin:1.5em 0;flex-wrap:wrap}
