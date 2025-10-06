@@ -79,9 +79,30 @@
         .skip-link{position:absolute;left:-9999px;background:#000;color:#fff;padding:0.5rem 1rem;z-index:10001;text-decoration:none}
         .skip-link:focus{left:0;top:0}
         
+        /* Hamburger Menu Button */
+        #menu-toggle{position:fixed;top:20px;left:20px;z-index:10002;width:50px;height:50px;background:#FF6B35;border:none;border-radius:8px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:0;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);box-shadow:0 4px 12px rgba(255,107,53,0.4)}
+        #menu-toggle:hover{background:#ff7d4d;transform:scale(1.05);box-shadow:0 6px 16px rgba(255,107,53,0.6)}
+        #menu-toggle:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
+        #menu-toggle span{display:block;width:28px;height:3px;background:#000;border-radius:3px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}
+        #menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(8px,8px)}
+        #menu-toggle.active span:nth-child(2){opacity:0;transform:translateX(-20px)}
+        #menu-toggle.active span:nth-child(3){transform:rotate(-45deg) translate(8px,-8px)}
+        
+        /* Sidebar - Collapsible */
+        #sidebar{position:fixed;left:-12em;top:0;bottom:0;width:12em;background:#5e42a6;z-index:10001;transition:left 0.4s cubic-bezier(0.4,0,0.2,1);padding:2em 1em 0.5em 1em;overflow-y:auto;box-shadow:4px 0 12px rgba(0,0,0,0.3)}
+        #sidebar.active{left:0}
+        #sidebar .inner{padding:0}
+        #sidebar nav ul{list-style:none;padding:0;margin:2em 0 0 0}
+        #sidebar nav ul li{margin:1em 0}
+        #sidebar nav ul li a{display:block;color:#fff;text-decoration:none;font-size:0.55em;padding:1em 0;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;border-bottom:1px solid rgba(255,255,255,0.1)}
+        #sidebar nav ul li a:hover,#sidebar nav ul li a:focus{color:#FF6B35;padding-left:0.5em;border-bottom-color:#FF6B35}
+        
+        /* Overlay for Sidebar */
+        #sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.4,0,0.2,1)}
+        #sidebar-overlay.active{opacity:1;pointer-events:all}
+        
         /* Critical Layout */
-        #wrapper{width:100%;position:relative}
-        @media(min-width:1025px){#wrapper{margin-left:180px}}
+        #wrapper{width:100%;position:relative;margin-left:0;transition:margin-left 0.4s cubic-bezier(0.4,0,0.2,1)}
         .wrapper{padding:4rem 2rem}
         .inner{max-width:1200px;margin:0 auto;width:100%}
         
@@ -108,46 +129,29 @@
         
         /* Mobile Optimization */
         @media(max-width:768px){
+            #menu-toggle{top:15px;left:15px;width:45px;height:45px}
+            #menu-toggle span{width:24px;height:2.5px}
             .sticky-cta{bottom:20px;top:auto;left:50%;transform:translateX(-50%);right:auto;padding:16px 32px;font-size:16px;min-width:280px}
             .sticky-cta:hover{transform:translateX(-50%) translateY(-2px)}
         }
         
-        /* Sidebar - Smaller (12em instead of 18em) */
-        #sidebar{width:12em!important;padding:2em 1em 0.5em 1em!important}
-        #sidebar .inner{padding:0!important}
-        #sidebar nav ul li{margin:1em 0!important}
-        #sidebar nav ul li a{font-size:0.55em!important;padding:1em 0!important}
+        /* Center Content */
+        .wrapper > .inner{margin:0 auto;padding-left:3em;padding-right:3em}
+        .wrapper h2{text-align:center}
+        .wrapper > .inner > p{text-align:center}
         
-        /* Wrapper - Match Sidebar Width & Center Content */
-        #sidebar + #wrapper{margin-left:12em!important}
-        .wrapper > .inner{margin:0 auto!important;padding-left:3em!important;padding-right:3em!important}
-        
-        /* Center Headings */
-        .wrapper h2{text-align:center!important}
-        .wrapper > .inner > p{text-align:center!important}
-        
-        /* Footer - Match Sidebar Width */
-        #sidebar + #wrapper + #footer{margin-left:12em!important}
-        #footer .inner{margin:0 auto!important}
+        /* Footer */
+        #footer .inner{margin:0 auto}
         
         /* Spotlights - Center Content */
-        .spotlights .content{display:flex!important;align-items:center!important;justify-content:center!important}
-        .spotlights .inner{margin:0 auto!important}
+        .spotlights .content{display:flex;align-items:center;justify-content:center}
+        .spotlights .inner{margin:0 auto}
         
         /* Features Grid - Center */
-        .features{margin-left:auto!important;margin-right:auto!important}
+        .features{margin-left:auto;margin-right:auto}
         
-        /* Mobile - Reset */
-        @media screen and (max-width:1280px){
-            #sidebar{width:100%!important;height:3.5em!important}
-            #sidebar + #wrapper{margin-left:0!important;padding-top:3.5em!important}
-            #sidebar + #wrapper + #footer{margin-left:0!important}
-            .wrapper > .inner{padding-left:2em!important;padding-right:2em!important}
-        }
         @media screen and (max-width:736px){
-            #sidebar{display:none!important}
-            #sidebar + #wrapper{padding-top:0!important}
-            .wrapper > .inner{padding-left:1.5em!important;padding-right:1.5em!important}
+            .wrapper > .inner{padding-left:1.5em;padding-right:1.5em}
         }
         
         /* Trust Badges */
@@ -208,6 +212,16 @@
 <body class="is-preload">
     <!-- Skip to Main Content (Accessibility) -->
     <a href="#intro" class="skip-link">Skip to main content</a>
+
+    <!-- Hamburger Menu Button -->
+    <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" aria-hidden="true"></div>
 
     <!-- Sticky CTA Button -->
     <a href="https://form.jotform.com/252777121852359" 
@@ -491,18 +505,6 @@
         </div>
     </footer>
 
-    <!-- Lite YouTube Script (2.6KB - Replaces Heavy iframes) -->
-    <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
-
-    <!-- Deferred Scripts with Passive Listeners Fix -->
-    <script defer src="assets/js/jquery.min.js"></script>
-    <script defer src="assets/js/jquery.scrollex.min.js"></script>
-    <script defer src="assets/js/jquery.scrolly.min.js"></script>
-    <script defer src="assets/js/browser.min.js"></script>
-    <script defer src="assets/js/breakpoints.min.js"></script>
-    <script defer src="assets/js/util.js"></script>
-    <script defer src="assets/js/main.js"></script>
-
     <!-- Exit Intent Popup HTML -->
     <div id="exit-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
         <div id="exit-popup">
@@ -524,6 +526,62 @@
             <p class="popup-guarantee">🔒 Your email is safe. We'll never share it.</p>
         </div>
     </div>
+
+    <!-- Lite YouTube Script (2.6KB - Replaces Heavy iframes) -->
+    <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js" defer></script>
+
+    <!-- Deferred Scripts with Passive Listeners Fix -->
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/jquery.scrollex.min.js"></script>
+    <script defer src="assets/js/jquery.scrolly.min.js"></script>
+    <script defer src="assets/js/browser.min.js"></script>
+    <script defer src="assets/js/breakpoints.min.js"></script>
+    <script defer src="assets/js/util.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+    <!-- Sidebar Toggle JavaScript -->
+    <script>
+    (function(){
+        const menuToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        
+        function toggleMenu() {
+            const isActive = sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', isActive);
+            overlay.setAttribute('aria-hidden', !isActive);
+        }
+        
+        function closeMenu() {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            overlay.setAttribute('aria-hidden', 'true');
+        }
+        
+        // Toggle on button click
+        menuToggle.addEventListener('click', toggleMenu);
+        
+        // Close when clicking overlay
+        overlay.addEventListener('click', closeMenu);
+        
+        // Close when clicking sidebar links
+        const sidebarLinks = sidebar.querySelectorAll('a');
+        sidebarLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    })();
+    </script>
 
     <!-- Exit Intent JavaScript (Optimized with Passive Listeners) -->
     <script>
