@@ -18,14 +18,14 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     
-    <!-- Preconnect to External Domains -->
+    <!-- Preconnect to External Domains (Performance) -->
     <link rel="preconnect" href="https://www.youtube-nocookie.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="dns-prefetch" href="https://form.jotform.com">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
-    <!-- Preload Critical Resources -->
+    <!-- Preload Critical Hero Image -->
     <link rel="preload" as="image" href="images/pic00.webp" type="image/webp" fetchpriority="high">
     
     <!-- Open Graph / Social Media -->
@@ -44,6 +44,10 @@
     <meta name="twitter:title" content="Pookie Beats - Type Beats & Producer Tools">
     <meta name="twitter:description" content="Daily type beats and the best tools for hip hop producers and artists.">
     <meta name="twitter:image" content="https://pookiebeats.com/images/pic00.jpg">
+
+    <!-- Original Stylesheets (Keep for Design) -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css"></noscript>
     
     <!-- Schema Markup - Website -->
     <script type="application/ld+json">
@@ -61,153 +65,398 @@
     }
     </script>
     
-    <!-- Critical CSS - Inlined for Fast First Paint -->
+    <!-- Custom Styles (Original + Accessibility Improvements) -->
     <style>
-        /* Critical Above-the-Fold Styles */
-        *,*::before,*::after{box-sizing:border-box}
-        body{margin:0;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#fff;background:#312450}
-        .skip-link{position:absolute;left:-9999px;background:#000;color:#fff;padding:0.5rem 1rem;z-index:10001;text-decoration:none}
-        .skip-link:focus{left:0;top:0}
+        /* Skip Link (Accessibility) */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            background: #000;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            z-index: 10001;
+            text-decoration: none;
+        }
+        .skip-link:focus {
+            left: 0;
+            top: 0;
+        }
         
-        /* Sticky CTA - Critical */
-        .sticky-cta{position:fixed;top:20px;right:20px;z-index:1000;padding:18px 40px;background:#FF6B35;color:#000!important;font-size:18px;font-weight:bold;border-radius:8px;box-shadow:0 4px 12px rgba(255,107,53,0.4);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);text-decoration:none;min-width:200px;text-align:center;border:none}
-        .sticky-cta:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.6);background:#ff7d4d}
-        .sticky-cta:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
+        /* Sticky CTA Button */
+        .sticky-cta {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 18px 40px;
+            background: #FF6B35;
+            color: #000000 !important;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            min-width: 200px;
+            text-align: center;
+            border: none;
+        }
         
-        /* Hero Section - Critical */
-        #intro{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1rem}
-        .inner{max-width:1200px;margin:0 auto;width:100%}
-        h1{font-size:clamp(1.5rem,5vw,3rem);margin:0.5em 0;line-height:1.2;text-align:center}
+        .sticky-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.6);
+            background: #ff7d4d;
+            color: #000000 !important;
+        }
         
-        /* Disclosure Box - Critical */
-        .disclosure-box{background:rgba(255,107,53,0.1);border-left:4px solid #FF6B35;padding:1em 1.5em;margin:1.5em 0;border-radius:4px;font-size:0.95em}
-        .disclosure-box strong{color:#FF6B35}
+        .sticky-cta:active {
+            transform: translateY(0);
+        }
         
-        /* Trust Badges - Critical */
-        .trust-badge-container{display:flex;align-items:center;justify-content:center;gap:20px;margin:1.5em 0;flex-wrap:wrap}
-        .trust-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(255,255,255,0.1);border-radius:6px;font-size:0.9em;border:1px solid rgba(255,255,255,0.2)}
-        .trust-badge strong{color:#FF6B35;font-size:1.2em}
+        /* Focus Styles (WCAG 2.2 Compliance) */
+        .sticky-cta:focus-visible,
+        .button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+        }
         
-        /* Buttons - Critical */
-        .button{display:inline-block;background:#FF6B35;color:#000!important;border:none;font-weight:bold;padding:12px 30px;border-radius:4px;text-decoration:none;transition:all 0.25s;box-shadow:0 4px 12px rgba(255,107,53,0.3);cursor:pointer}
-        .button:hover{background:#ff7d4d;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.5)}
-        .button:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
-        .button.youtube-btn{background:#FF0000}
-        .button.youtube-btn:hover{background:#cc0000}
+        /* Optimized Sidebar */
+        #sidebar {
+            opacity: 0.9;
+            background: rgba(49, 36, 80, 0.95);
+        }
         
-        .actions{list-style:none;padding:0;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin:2em 0}
-        .actions li{margin:0}
+        #sidebar nav ul li a {
+            font-size: 0.9em;
+        }
+        
+        /* Trust Badges */
+        .trust-badge-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 1.5em 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            font-size: 0.9em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-badge strong {
+            color: #FF6B35;
+            font-size: 1.2em;
+        }
+        
+        /* Enhanced CTA Buttons */
+        .button {
+            background: #FF6B35;
+            color: #000000 !important;
+            border: none;
+            font-weight: bold;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+        
+        .button:hover {
+            background: #ff7d4d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.5);
+            color: #000000 !important;
+        }
+        
+        .button:active {
+            transform: translateY(0);
+        }
+        
+        .button.small {
+            background: #5e42a6;
+            color: #ffffff !important;
+        }
+        
+        .button.small:hover {
+            background: #7052c4;
+            color: #ffffff !important;
+        }
+        
+        /* Center actions */
+        .actions {
+            justify-content: center;
+        }
+        
+        /* YouTube button specific styling */
+        .button.youtube-btn {
+            background: #FF0000;
+            color: #000000 !important;
+        }
+        
+        .button.youtube-btn:hover {
+            background: #cc0000;
+            color: #000000 !important;
+        }
+        
+        /* Disclosure Box */
+        .disclosure-box {
+            background: rgba(255, 107, 53, 0.1);
+            border-left: 4px solid #FF6B35;
+            padding: 1em 1.5em;
+            margin: 1.5em 0;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        
+        .disclosure-box strong {
+            color: #FF6B35;
+        }
+        
+        /* Video embed container */
+        .video-embed-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 1.5em 0;
+            border-radius: 4px;
+        }
+        
+        .video-embed-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
         
         /* Mobile Optimization */
-        @media(max-width:768px){
-            .sticky-cta{bottom:20px;top:auto;left:50%;transform:translateX(-50%);right:auto;padding:16px 32px;font-size:16px;min-width:280px}
-            .sticky-cta:hover{transform:translateX(-50%) translateY(-2px)}
-            .trust-badge{font-size:0.8em;padding:8px 15px}
-        }
-    </style>
-    
-    <!-- Async CSS Loading -->
-    <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
-    
-    <!-- Non-Critical Styles -->
-    <style>
-        /* Sidebar */
-        #sidebar{position:fixed;left:0;top:0;bottom:0;width:250px;background:rgba(49,36,80,0.95);padding:2rem;z-index:999;opacity:0.9}
-        #sidebar nav ul{list-style:none;padding:0}
-        #sidebar nav ul li{margin:1em 0}
-        #sidebar nav ul li a{color:#fff;text-decoration:none;font-size:0.9em}
-        #sidebar nav ul li a:hover{color:#FF6B35}
-        
-        /* Content Sections */
-        .wrapper{padding:4rem 2rem}
-        .wrapper.style1{background:#312450}
-        .wrapper.style2{background:#26223a}
-        .wrapper.style3{background:#1d1a28}
-        .wrapper.style1-alt{background:#221b35}
-        
-        section h2{font-size:clamp(1.5rem,4vw,2.5rem);margin-bottom:1em;color:#FF6B35}
-        section h3{font-size:clamp(1.2rem,3vw,1.8rem);margin-bottom:0.5em}
-        
-        /* Spotlights */
-        .spotlights section{display:grid;grid-template-columns:1fr 1fr;gap:2rem;padding:3rem 0;align-items:center}
-        .spotlights section:nth-child(even){direction:rtl}
-        .spotlights section:nth-child(even) .content{direction:ltr}
-        .spotlights .image{display:block}
-        .spotlights .image img{width:100%;height:auto;display:block}
-        
-        /* Features Grid */
-        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:2rem 0}
-        .features section{background:rgba(255,255,255,0.05);padding:2rem;border-radius:8px}
-        .features .icon{font-size:3rem;color:#FF6B35;margin-bottom:1rem}
-        
-        /* Video Embed */
-        .video-embed-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:1.5em 0;border-radius:4px;background:#000}
-        .video-embed-container iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
-        
-        /* Contact Section */
-        .split{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin:2rem 0}
-        .contact{list-style:none;padding:0}
-        .contact li{margin:1.5em 0}
-        .contact a{color:#FF6B35;text-decoration:none}
-        .contact a:hover{text-decoration:underline}
-        
-        /* Footer */
-        #footer{padding:2rem;text-align:center}
-        #footer .menu{list-style:none;padding:0;margin:0}
-        #footer .menu li{display:inline-block;margin:0 1em}
-        
-        /* Exit Popup */
-        #exit-popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:10000;justify-content:center;align-items:center}
-        #exit-popup-overlay.active{display:flex}
-        #exit-popup{background:linear-gradient(135deg,#312450 0%,#5e42a6 100%);border-radius:12px;padding:3em 2.5em;max-width:550px;width:90%;position:relative;box-shadow:0 20px 60px rgba(0,0,0,0.5);text-align:center;border:2px solid rgba(255,107,53,0.3)}
-        #exit-popup-close{position:absolute;top:15px;right:15px;background:rgba(255,255,255,0.1);border:none;color:#fff;font-size:28px;width:40px;height:40px;border-radius:50%;cursor:pointer;transition:all 0.2s;line-height:1;font-weight:bold}
-        #exit-popup-close:hover{background:rgba(255,107,53,0.3);transform:rotate(90deg)}
-        #exit-popup-close:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
-        #exit-popup h3{color:#FF6B35;font-size:2em;margin-bottom:0.5em;line-height:1.2}
-        #exit-popup p{font-size:1.1em;margin-bottom:1.5em;color:rgba(255,255,255,0.9)}
-        #exit-popup .popup-benefits{background:rgba(0,0,0,0.2);padding:1.5em;border-radius:8px;margin-bottom:2em;border-left:4px solid #FF6B35}
-        #exit-popup .popup-benefits ul{list-style:none;padding:0;margin:0;text-align:left}
-        #exit-popup .popup-benefits li{padding:0.5em 0;font-size:1em;color:#fff}
-        #exit-popup .popup-benefits li:before{content:"✓ ";color:#FF6B35;font-weight:bold;margin-right:10px}
-        #exit-popup .popup-cta{background:#FF6B35;color:#000;padding:18px 40px;font-size:1.2em;font-weight:bold;border:none;border-radius:8px;cursor:pointer;transition:all 0.25s cubic-bezier(0.4,0,0.2,1);box-shadow:0 4px 12px rgba(255,107,53,0.4);text-decoration:none;display:inline-block;margin-bottom:1em}
-        #exit-popup .popup-cta:hover{background:#ff7d4d;transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.6)}
-        #exit-popup .popup-guarantee{font-size:0.85em;opacity:0.8;margin-top:1em}
-        
-        @media(max-width:1024px){
-            #sidebar{display:none}
-            .spotlights section{grid-template-columns:1fr}
-            .spotlights section:nth-child(even){direction:ltr}
-            .split{grid-template-columns:1fr}
+        @media screen and (max-width: 768px) {
+            .sticky-cta {
+                bottom: 20px;
+                top: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                right: auto;
+                padding: 16px 32px;
+                font-size: 16px;
+                min-width: 280px;
+            }
+            
+            .sticky-cta:hover {
+                transform: translateX(-50%) translateY(-2px);
+            }
+            
+            .sticky-cta:active {
+                transform: translateX(-50%) translateY(0);
+            }
+            
+            .trust-badge-container {
+                gap: 10px;
+            }
+            
+            .trust-badge {
+                font-size: 0.8em;
+                padding: 8px 15px;
+            }
         }
         
-        @media(max-width:768px){
-            #exit-popup{padding:2em 1.5em;max-width:95%}
-            #exit-popup h3{font-size:1.5em}
-            #exit-popup p{font-size:1em}
-            #exit-popup .popup-cta{padding:16px 32px;font-size:1em;width:100%}
-            .features{grid-template-columns:1fr}
+        @media screen and (max-width: 1024px) {
+            #sidebar {
+                display: none;
+            }
+        }
+        
+        /* Exit Intent Popup */
+        #exit-popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        #exit-popup-overlay.active {
+            display: flex;
+        }
+        
+        #exit-popup {
+            background: linear-gradient(135deg, #312450 0%, #5e42a6 100%);
+            border-radius: 12px;
+            padding: 3em 2.5em;
+            max-width: 550px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: slideUp 0.4s ease-out;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+        }
+        
+        #exit-popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            font-size: 28px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            line-height: 1;
+            font-weight: bold;
+        }
+        
+        #exit-popup-close:hover {
+            background: rgba(255, 107, 53, 0.3);
+            transform: rotate(90deg);
+        }
+        
+        #exit-popup-close:focus-visible {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+        }
+        
+        #exit-popup h3 {
+            color: #FF6B35;
+            font-size: 2em;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+        
+        #exit-popup p {
+            font-size: 1.1em;
+            margin-bottom: 1.5em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        #exit-popup .popup-benefits {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5em;
+            border-radius: 8px;
+            margin-bottom: 2em;
+            border-left: 4px solid #FF6B35;
+        }
+        
+        #exit-popup .popup-benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        
+        #exit-popup .popup-benefits li {
+            padding: 0.5em 0;
+            font-size: 1em;
+            color: #fff;
+        }
+        
+        #exit-popup .popup-benefits li:before {
+            content: "✓ ";
+            color: #FF6B35;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        #exit-popup .popup-cta {
+            background: #FF6B35;
+            color: #000000;
+            padding: 18px 40px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1em;
+        }
+        
+        #exit-popup .popup-cta:hover {
+            background: #ff7d4d;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(255, 107, 53, 0.6);
+        }
+        
+        #exit-popup .popup-guarantee {
+            font-size: 0.85em;
+            opacity: 0.8;
+            margin-top: 1em;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            #exit-popup {
+                padding: 2em 1.5em;
+                max-width: 95%;
+            }
+            
+            #exit-popup h3 {
+                font-size: 1.5em;
+            }
+            
+            #exit-popup p {
+                font-size: 1em;
+            }
+            
+            #exit-popup .popup-cta {
+                padding: 16px 32px;
+                font-size: 1em;
+                width: 100%;
+            }
         }
     </style>
 </head>
-
 <body class="is-preload">
+
     <!-- Skip to Main Content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#intro" class="skip-link">Skip to main content</a>
 
     <!-- Sticky CTA Button -->
     <a href="https://form.jotform.com/252777121852359" 
        target="_blank" 
        rel="noopener nofollow" 
        class="sticky-cta"
-       aria-label="Get 5 free beats - opens in new window">
-        Get 5 Free Beats
-    </a>
+       aria-label="Get 5 free beats">Get 5 Free Beats</a>
 
     <!-- Sidebar -->
-    <aside id="sidebar" role="complementary" aria-label="Quick navigation">
+    <section id="sidebar" role="complementary" aria-label="Quick navigation">
         <div class="inner">
-            <nav aria-label="Page sections">
+            <nav>
                 <ul>
                     <li><a href="#intro">Welcome</a></li>
                     <li><a href="#top-picks">Top Tools</a></li>
@@ -215,21 +464,21 @@
                 </ul>
             </nav>
         </div>
-    </aside>
+    </section>
 
-    <!-- Main Wrapper -->
+    <!-- Wrapper -->
     <div id="wrapper">
 
         <!-- Hero Section -->
-        <section id="intro" class="wrapper style1 fullscreen fade-up" role="main">
-            <div class="inner" id="main-content">
-                <!-- Optimized Hero Image with WebP and AVIF -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner">
+                <!-- Optimized Hero Image with AVIF + WebP -->
                 <picture>
                     <source srcset="images/pic00.avif" type="image/avif">
                     <source srcset="images/pic00.webp" type="image/webp">
                     <img src="images/pic00.jpg" 
-                         alt="Pookie Beats producer profile photo" 
-                         style="width:150px;height:150px;border-radius:50%;margin-bottom:1em;object-fit:cover;display:block;margin-left:auto;margin-right:auto" 
+                         alt="Pookie Beats profile" 
+                         style="width:150px; height:150px; border-radius:50%; margin-bottom: 1em; object-fit: cover; display: block; margin-left: auto; margin-right: auto;" 
                          width="150"
                          height="150"
                          fetchpriority="high"
@@ -241,20 +490,20 @@
                     <strong>⚡ Affiliate Disclosure:</strong> Some links on this page are affiliate links. I earn a small commission when you purchase through them at no extra cost to you. This supports my daily free beat uploads on YouTube. I only recommend tools I actually use and trust.
                 </div>
                 
-                <h1>Make Radio-Ready Beats in 30 Minutes</h1>
-                <p style="font-size:1.15em;margin-bottom:1.5em;text-align:center">Daily type beats for hip hop artists + the exact production tools that helped me create <strong>beats with over 2M+ views</strong> on YouTube.</p>
+                <h1 style="text-align: center;">Make Radio-Ready Beats in 30 Minutes</h1>
+                <p style="font-size: 1.15em; margin-bottom: 1.5em; text-align: center;">Daily type beats for hip hop artists + the exact production tools that helped me create <strong>beats with over 2M+ views</strong> on YouTube.</p>
                 
                 <!-- Trust Badges -->
-                <div class="trust-badge-container" role="list" aria-label="Trust indicators">
-                    <div class="trust-badge" role="listitem">
+                <div class="trust-badge-container">
+                    <div class="trust-badge">
                         <span aria-hidden="true">📺</span>
                         <span><strong>50,000+</strong> Producers</span>
                     </div>
-                    <div class="trust-badge" role="listitem">
+                    <div class="trust-badge">
                         <span aria-hidden="true">🎵</span>
                         <span><strong>Daily</strong> Free Beats</span>
                     </div>
-                    <div class="trust-badge" role="listitem">
+                    <div class="trust-badge">
                         <span aria-hidden="true">⭐</span>
                         <span><strong>Trusted</strong> Since 2020</span>
                     </div>
@@ -268,23 +517,21 @@
         </section>
 
         <!-- Top 2 Programs (Spotlight Style) -->
-        <section id="top-picks" class="wrapper style2 spotlights" aria-labelledby="top-picks-heading">
-            <div class="inner">
-                <h2 id="top-picks-heading" style="text-align:center;margin-bottom:2em">Top Producer Tools</h2>
-            </div>
-            
+        <section id="top-picks" class="wrapper style2 spotlights">
             <!-- Unison Audio -->
             <section>
                 <a href="https://unison.audio/ref/pookiebeats/" 
                    target="_blank" 
                    rel="sponsored noopener nofollow" 
                    class="image" 
-                   aria-label="Visit Unison Audio website - opens in new window">
+                   aria-label="Visit Unison Audio website">
+                    <!-- Optimized Image with AVIF + WebP -->
                     <picture>
                         <source srcset="images/pic01.avif" type="image/avif">
                         <source srcset="images/pic01.webp" type="image/webp">
                         <img src="images/pic01.jpg" 
-                             alt="Unison Audio MIDI packs and production tools interface" 
+                             alt="Unison Audio - MIDI packs and production tools" 
+                             data-position="center center"
                              width="800"
                              height="600"
                              loading="lazy">
@@ -292,19 +539,19 @@
                 </a>
                 <div class="content">
                     <div class="inner">
-                        <h3>🏆 #1 Pick: Unison Audio</h3>
+                        <h2>🏆 #1 Pick: Unison Audio</h2>
                         <p><strong>Why I recommend it:</strong> If you're tired of staring at a blank DAW for hours, Unison has the best MIDI packs, drum kits, and Serum presets I've ever used. These tools cut my beat-making time from 2 hours to 15 minutes.</p>
                         
                         <!-- Trust Signal -->
-                        <div class="trust-badge" style="display:inline-flex;margin:1em 0">
+                        <div class="trust-badge" style="display: inline-flex; margin: 1em 0;">
                             <span aria-hidden="true">⭐⭐⭐⭐⭐</span>
-                            <span style="margin-left:10px"><strong>4.8/5</strong> from 1,200+ producers</span>
+                            <span style="margin-left: 10px;"><strong>4.8/5</strong> from 1,200+ producers</span>
                         </div>
                         
-                        <!-- Video Embed -->
+                        <!-- Unison Video Embed -->
                         <div class="video-embed-container">
                             <iframe src="https://www.youtube-nocookie.com/embed/t4xxec0hFdc?start=14&rel=0&modestbranding=1" 
-                                    title="Unison Audio demonstration video"
+                                    title="Unison Audio demonstration"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
@@ -325,12 +572,14 @@
                    target="_blank" 
                    rel="sponsored noopener nofollow" 
                    class="image" 
-                   aria-label="Visit RouteNote website - opens in new window">
+                   aria-label="Visit RouteNote website">
+                    <!-- Optimized Image with AVIF + WebP -->
                     <picture>
                         <source srcset="images/pic02.avif" type="image/avif">
                         <source srcset="images/pic02.webp" type="image/webp">
                         <img src="images/pic02.jpg" 
-                             alt="RouteNote free music distribution platform dashboard" 
+                             alt="RouteNote - Free music distribution" 
+                             data-position="top center"
                              width="800"
                              height="600"
                              loading="lazy">
@@ -338,13 +587,13 @@
                 </a>
                 <div class="content">
                     <div class="inner">
-                        <h3>🚀 #2 Pick: RouteNote</h3>
+                        <h2>🚀 #2 Pick: RouteNote</h2>
                         <p><strong>Why I use it:</strong> This is how I get my beats on Spotify, Apple Music, and every major platform—completely free. Zero upfront costs. You keep 85% of royalties on the free plan, or 100% if you go premium.</p>
                         
                         <!-- Trust Signal -->
-                        <div class="trust-badge" style="display:inline-flex;margin:1em 0">
+                        <div class="trust-badge" style="display: inline-flex; margin: 1em 0;">
                             <span aria-hidden="true">✅</span>
-                            <span style="margin-left:10px"><strong>Used by 500,000+</strong> artists worldwide</span>
+                            <span style="margin-left: 10px;"><strong>Used by 500,000+</strong> artists worldwide</span>
                         </div>
                         
                         <p><strong>Pookie's Pro Tip:</strong> Before uploading, use ChatGPT to search RouteNote's upload rules. This saves you days of waiting just to get rejected for simple mistakes like wrong file format or generic titles.</p>
@@ -358,22 +607,22 @@
         </section>
 
         <!-- More Tools (Grid Style) -->
-        <section id="more-tools" class="wrapper style3 fade-up" aria-labelledby="more-tools-heading">
+        <section id="more-tools" class="wrapper style3 fade-up">
             <div class="inner">
-                <h2 id="more-tools-heading">Other Essential Producer Tools</h2>
+                <h2>Other Essential Producer Tools</h2>
                 <p>These are highly rated tools used by the producer community. I've tested each one personally.</p>
-                
                 <div class="features">
+                    
                     <!-- Waves -->
-                    <article>
+                    <section>
                         <span class="icon solid major fa-wave-square" aria-hidden="true"></span>
                         <h3>Waves Plugins</h3>
                         <p>Industry standard for mixing and mastering. SSL E-Channel and Renaissance Compressor are on thousands of platinum records. They run huge sales constantly—never pay full price.</p>
                         
-                        <!-- Video Embed -->
+                        <!-- Waves Video Embed -->
                         <div class="video-embed-container">
                             <iframe src="https://www.youtube-nocookie.com/embed/pRW8KGjVOsk?rel=0&modestbranding=1" 
-                                    title="Waves plugins demonstration video"
+                                    title="Waves plugins demonstration"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
@@ -382,18 +631,18 @@
                         <ul class="actions">
                             <li><a href="https://www.waves.com/" target="_blank" rel="sponsored noopener nofollow" class="button small">Browse Waves Sales</a></li>
                         </ul>
-                    </article>
+                    </section>
 
                     <!-- Publer -->
-                    <article>
+                    <section>
                         <span class="icon solid major fa-share-alt" aria-hidden="true"></span>
                         <h3>Publer</h3>
                         <p>This is how I automate posting beats everywhere. I connect Publer's API with n8n to schedule posts across all platforms. Saves me 10+ hours every week so I can focus on making beats.</p>
                         
-                        <!-- Video Embed -->
+                        <!-- Publer Video Embed -->
                         <div class="video-embed-container">
                             <iframe src="https://www.youtube-nocookie.com/embed/u8iySEvN-30?start=88&rel=0&modestbranding=1" 
-                                    title="Publer automation demonstration video"
+                                    title="Publer automation demonstration"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
@@ -402,18 +651,18 @@
                         <ul class="actions">
                             <li><a href="https://publer.com/pookiebeats" target="_blank" rel="sponsored noopener nofollow" class="button small">Try Publer Free</a></li>
                         </ul>
-                    </article>
+                    </section>
 
                     <!-- Singorama -->
-                    <article>
+                    <section>
                         <span class="icon solid major fa-microphone-alt" aria-hidden="true"></span>
                         <h3>Singorama</h3>
                         <p>Vocal training software for producers working with artists or recording their own vocals. Teaches proper recording technique and vocal performance fundamentals.</p>
                         
-                        <!-- Video Embed -->
+                        <!-- Singorama Video Embed -->
                         <div class="video-embed-container">
                             <iframe src="https://www.youtube-nocookie.com/embed/slkEaNPbGpE?start=67&rel=0&modestbranding=1" 
-                                    title="Singorama vocal training demonstration video"
+                                    title="Singorama vocal training demonstration"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                                     allowfullscreen 
                                     loading="lazy"></iframe>
@@ -422,14 +671,15 @@
                         <ul class="actions">
                             <li><a href="https://f2f38ivdx3nzpwvmsltd-21-fj.hop.clickbank.net" target="_blank" rel="sponsored noopener nofollow" class="button small">Learn More</a></li>
                         </ul>
-                    </article>
+                    </section>
+
                 </div>
                 
                 <!-- Mid-page CTA Repeat -->
-                <div style="text-align:center;margin:3em 0">
+                <div style="text-align: center; margin: 3em 0;">
                     <h3>Ready to Level Up Your Production?</h3>
                     <p>Join 50,000+ producers getting better every day.</p>
-                    <ul class="actions" style="justify-content:center">
+                    <ul class="actions" style="justify-content: center;">
                         <li><a href="https://unison.audio/ref/pookiebeats/" target="_blank" rel="sponsored noopener nofollow" class="button">Start With Unison Audio</a></li>
                     </ul>
                 </div>
@@ -437,13 +687,12 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="wrapper style1 fade-up" aria-labelledby="contact-heading">
+        <section id="contact" class="wrapper style1 fade-up">
             <div class="inner">
-                <h2 id="contact-heading">Get in Touch</h2>
+                <h2>Get in Touch</h2>
                 <p>Questions about any of these tools or want to work together? Hit me up directly.</p>
-                
-                <div class="split">
-                    <div>
+                <div class="split style1">
+                    <section>
                         <ul class="contact">
                             <li>
                                 <h3>YouTube</h3>
@@ -454,20 +703,20 @@
                                 <a href="mailto:brysselkecks@gmail.com">brysselkecks@gmail.com</a>
                             </li>
                         </ul>
-                    </div>
-                    <div>
-                        <p style="font-size:0.9em;line-height:1.6">
+                    </section>
+                    <section>
+                        <p style="font-size: 0.9em; line-height: 1.6;">
                             <strong>About This Site:</strong><br>
                             I'm straight up with you—I use these tools daily. When you buy through my affiliate links, I get a small commission that helps me keep uploading free beats on YouTube. You pay the exact same price either way. I only link to stuff that's actually legit and that I personally use or have thoroughly tested.
                         </p>
-                    </div>
+                    </section>
                 </div>
                 
                 <!-- Final CTA -->
-                <div style="text-align:center;margin:3em 0">
+                <div style="text-align: center; margin: 3em 0;">
                     <h3>Don't Miss Out on Free Beats & Production Tips</h3>
                     <p>New beats uploaded daily. Production tutorials every week.</p>
-                    <ul class="actions" style="justify-content:center">
+                    <ul class="actions" style="justify-content: center;">
                         <li><a href="https://www.youtube.com/channel/UCOHFxROuCmBQvQ_bu0MTs4w/" target="_blank" rel="noopener" class="button youtube-btn">Subscribe on YouTube</a></li>
                         <li><a href="https://form.jotform.com/252777121852359" target="_blank" rel="noopener nofollow" class="button">Get 5 Free Beats</a></li>
                     </ul>
@@ -478,19 +727,28 @@
     </div>
 
     <!-- Footer -->
-    <footer id="footer" class="wrapper style1-alt" role="contentinfo">
-        <div class="inner">
-            <ul class="menu">
-                <li>&copy; 2025 Pookie Beats. All rights reserved.</li>
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner" style="text-align: center;">
+            <ul class="menu" style="text-align: center;">
+                <li>&copy; Pookie Beats. All rights reserved.</li>
                 <li>Design: <a href="http://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
-                <li style="font-size:0.75em;opacity:0.7;margin-top:0.5em;max-width:600px;margin-left:auto;margin-right:auto">
+                <li style="font-size: 0.75em; opacity: 0.7; margin-top: 0.5em; max-width: 600px; margin-left: auto; margin-right: auto;">
                     <strong>FTC Disclosure:</strong> This website contains affiliate links, meaning I earn a commission if you purchase through them at no additional cost to you. This helps support my daily beat uploads and free content. I only recommend tools that are genuinely useful for producers and artists.
                 </li>
             </ul>
         </div>
     </footer>
 
-    <!-- Exit Intent Popup -->
+    <!-- Scripts (Deferred for Performance) -->
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/jquery.scrollex.min.js"></script>
+    <script defer src="assets/js/jquery.scrolly.min.js"></script>
+    <script defer src="assets/js/browser.min.js"></script>
+    <script defer src="assets/js/breakpoints.min.js"></script>
+    <script defer src="assets/js/util.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+    <!-- Exit Intent Popup HTML -->
     <div id="exit-popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title">
         <div id="exit-popup">
             <button id="exit-popup-close" aria-label="Close popup">&times;</button>
@@ -506,22 +764,13 @@
                 </ul>
             </div>
             
-            <a href="https://form.jotform.com/252777121852359" class="popup-cta" id="popup-signup-btn" target="_blank" rel="noopener nofollow">Yes! Send Me Free Beats</a>
+            <a href="https://form.jotform.com/252777121852359" class="popup-cta scrolly" id="popup-signup-btn" target="_blank" rel="noopener nofollow">Yes! Send Me Free Beats</a>
             
             <p class="popup-guarantee">🔒 Your email is safe. We'll never share it.</p>
         </div>
     </div>
 
-    <!-- Deferred JavaScript -->
-    <script defer src="assets/js/jquery.min.js"></script>
-    <script defer src="assets/js/jquery.scrollex.min.js"></script>
-    <script defer src="assets/js/jquery.scrolly.min.js"></script>
-    <script defer src="assets/js/browser.min.js"></script>
-    <script defer src="assets/js/breakpoints.min.js"></script>
-    <script defer src="assets/js/util.js"></script>
-    <script defer src="assets/js/main.js"></script>
-
-    <!-- Exit Intent JavaScript - Optimized -->
+    <!-- Exit Intent JavaScript (Optimized) -->
     <script>
     (function(){
         if(sessionStorage.getItem('exitPopupShown'))return;
@@ -541,5 +790,6 @@
         document.addEventListener('keydown',e=>{if(e.key==='Escape'&&shown)hide()})
     })();
     </script>
+
 </body>
 </html>
