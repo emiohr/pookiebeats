@@ -69,41 +69,6 @@
         .skip-link{position:absolute;left:-9999px;background:#000;color:#fff;padding:0.5rem 1rem;z-index:10001;text-decoration:none}
         .skip-link:focus{left:0;top:0}
         
-        /* Hamburger Menu Button */
-        #menu-toggle{position:fixed;top:20px;left:20px;z-index:10002;width:50px;height:50px;background:#FF6B35;border:none;border-radius:8px;cursor:pointer;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;padding:0;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);box-shadow:0 4px 12px rgba(255,107,53,0.4)}
-        #menu-toggle:hover{background:#ff7d4d;transform:scale(1.05);box-shadow:0 6px 16px rgba(255,107,53,0.6)}
-        #menu-toggle:focus-visible{outline:3px solid #0066cc;outline-offset:2px}
-        #menu-toggle span{display:block;width:28px;height:3px;background:#000;border-radius:3px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1); transform-origin: center;}
-        #menu-toggle.active span:nth-child(1){transform: translateY(9px) rotate(45deg)}
-        #menu-toggle.active span:nth-child(2){opacity:0}
-        #menu-toggle.active span:nth-child(3){transform: translateY(-9px) rotate(-45deg)}
-        
-        /* Sidebar - Collapsible */
-        #sidebar{position:fixed;left:-15em;top:0;bottom:0;width:15em;background:#5e42a6;z-index:10001;transition:left 0.4s cubic-bezier(0.4,0,0.2,1);padding:2em 1.5em 0.5em 1.5em;overflow-y:auto;box-shadow:4px 0 12px rgba(0,0,0,0.3)}
-        #sidebar.active{left:0}
-        #sidebar .inner{padding:0}
-        #sidebar nav ul{list-style:none;padding:0;margin:2em 0 0 0}
-        #sidebar nav ul li{margin:1em 0}
-        #sidebar nav ul li a{display:block;color:#fff;text-decoration:none;font-size:0.6em;padding:1em 0;text-transform:uppercase;letter-spacing:0.1em;transition:all 0.2s;border-bottom:1px solid rgba(255,255,255,0.1); text-align: center;}
-        #sidebar nav ul li a:hover,#sidebar nav ul li a:focus{color:#FF6B35;border-bottom-color:#FF6B35}
-        
-        /* Overlay for Sidebar */
-        #sidebar-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.4,0,0.2,1)}
-        #sidebar-overlay.active{opacity:1;pointer-events:all}
-        
-        /* Critical Layout */
-        #wrapper{width:100%;position:relative;margin-left:0;transition:margin-left 0.4s cubic-bezier(0.4,0,0.2,1)}
-        .wrapper{padding:4rem 2rem}
-        .inner{max-width:1200px;margin:0 auto;width:100%}
-
-        /* FIX: Override external style pushing content */
-        #sidebar + #wrapper {
-            margin-left: 0;
-        }
-        #sidebar + #wrapper + #footer {
-            margin-left: 0;
-        }
-        
         /* Sticky CTA Button */
         .sticky-cta{position:fixed;top:20px;right:20px;z-index:1000;padding:18px 40px;background:#FF6B35;color:#000!important;font-size:18px;font-weight:bold;border-radius:8px;box-shadow:0 4px 12px rgba(255,107,53,0.4);transition:all 0.25s cubic-bezier(0.4,0,0.2,1);text-decoration:none;min-width:200px;text-align:center;border:none; display: inline-flex; justify-content: center; align-items: center;}
         .sticky-cta:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(255,107,53,0.6);background:#ff7d4d}
@@ -127,13 +92,14 @@
         
         /* Mobile Optimization */
         @media(max-width:768px){
-            #menu-toggle{top:15px;left:15px;width:45px;height:45px}
-            #menu-toggle span{width:24px;height:2.5px}
-            #menu-toggle.active span:nth-child(1){transform: translateY(8.5px) rotate(45deg)}
-            #menu-toggle.active span:nth-child(3){transform: translateY(-8.5px) rotate(-45deg)}
             .sticky-cta{bottom:20px;top:auto;left:50%;transform:translateX(-50%);right:auto;padding:16px 32px;font-size:16px;min-width:280px}
             .sticky-cta:hover{transform:translateX(-50%) translateY(-2px)}
         }
+        
+        /* Critical Layout */
+        #wrapper{width:100%;position:relative;margin-left:0}
+        .wrapper{padding:4rem 2rem}
+        .inner{max-width:1200px;margin:0 auto;width:100%}
         
         /* Center Content */
         .wrapper > .inner{margin:0 auto;padding-left:3em;padding-right:3em}
@@ -212,31 +178,11 @@
 <body class="is-preload">
     <a href="#intro" class="skip-link">Skip to main content</a>
 
-    <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div id="sidebar-overlay" aria-hidden="true"></div>
-
     <a href="https://form.jotform.com/252777121852359" 
        target="_blank" 
        rel="noopener nofollow" 
        class="sticky-cta"
        aria-label="Get 5 free beats">Get 5 Free Beats</a>
-
-    <section id="sidebar" role="complementary" aria-label="Quick navigation">
-        <div class="inner">
-            <nav>
-                <ul>
-                    <li><a href="#intro">Welcome</a></li>
-                    <li><a href="#top-picks">Top Tools</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </section>
 
     <div id="wrapper">
 
@@ -547,49 +493,6 @@
 
     <script>
     (function(){
-        const menuToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('sidebar-overlay');
-        
-        function toggleMenu() {
-            const isActive = sidebar.classList.toggle('active');
-            overlay.classList.toggle('active');
-            menuToggle.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive);
-            overlay.setAttribute('aria-hidden', !isActive);
-        }
-        
-        function closeMenu() {
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-            menuToggle.classList.remove('active');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            overlay.setAttribute('aria-hidden', 'true');
-        }
-        
-        // Toggle on button click
-        menuToggle.addEventListener('click', toggleMenu);
-        
-        // Close when clicking overlay
-        overlay.addEventListener('click', closeMenu);
-        
-        // Close when clicking sidebar links
-        const sidebarLinks = sidebar.querySelectorAll('a');
-        sidebarLinks.forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-        
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && sidebar.classList.contains('active')) {
-                closeMenu();
-            }
-        });
-    })();
-    </script>
-
-    <script>
-    (function(){
         if(sessionStorage.getItem('exitPopupShown'))return;
         const o=document.getElementById('exit-popup-overlay'),c=document.getElementById('exit-popup-close'),s=document.getElementById('popup-signup-btn');
         let shown=false;
@@ -610,4 +513,3 @@
 
 </body>
 </html>
-
